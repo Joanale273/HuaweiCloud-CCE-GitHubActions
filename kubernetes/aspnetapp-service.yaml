@@ -16,5 +16,4 @@ spec:
       port: 8000
       protocol: TCP
   type: LoadBalancer
-  loadBalancerIP: 172.17.106.241
   
