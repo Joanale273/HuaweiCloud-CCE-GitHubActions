@@ -12,7 +12,6 @@ spec:
   ports:
     - name: cce-service-0
       targetPort: 80
-      nodePort: 0
       port: 8000
       protocol: TCP
   type: LoadBalancer
