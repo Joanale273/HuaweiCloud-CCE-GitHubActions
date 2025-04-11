@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: aspdotnet-elb
+  labels:
+    app: aspdotnet
   namespace: default
   annotations:
     kubernetes.io/elb.class: performance
@@ -9,9 +11,11 @@ metadata:
 spec:
   selector:
     app: aspdotnet
+  externalTrafficPolicy: Cluster
   ports:
-    - name: http
-      port: 8000
+    - name: cce-service-0
       targetPort: 80
+      port: 8000
       protocol: TCP
   type: LoadBalancer
+  

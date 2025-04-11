@@ -1,0 +1,34 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: aspdotnet
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aspdotnet
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: aspdotnet
+        version: v1
+    spec:
+      imagePullSecrets:
+        - name: swr-secret
+      containers:
+        - name: container-0
+          image: 'swr.la-south-2.myhuaweicloud.com/tdp-hublean-repo/aspnetapp:IMAGE_LABEL'
+          resources:
+            limits:
+              cpu: 250m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 512Mi
+          ports:
+            - containerPort: 80
+              # Triggering despliegue!!
+
+              
