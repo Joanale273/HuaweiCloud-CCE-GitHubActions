@@ -18,6 +18,7 @@ jobs:
       KUBECONFIG: ${{ secrets.HC_CCE_KUBECONFIG }}
       SWR_ENDPOINT: ${{ secrets.SWR_ENDPOINT }}
       SWR_ORGANIZATION_NAME: ${{ secrets.SWR_ORGANIZATION_NAME }}
+      SWR_USER: ${{ secrets.SWR_USER }}
       IMAGE_NAME: aspnetapp
       DEPLOYMENT_NAME: aspnetapp
       DOCKER_WORKING_DIRECTORY: ./docker
