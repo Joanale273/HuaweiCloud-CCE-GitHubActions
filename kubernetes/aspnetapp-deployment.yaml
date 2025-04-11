@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: container-0
-          image: 'aspnetapp:IMAGE_LABEL'
+          image: 'swr.la-south-2.myhuaweicloud.com/tdp-hublean-repo/aspnetapp:IMAGE_LABEL'
           resources:
             limits:
               cpu: 250m
