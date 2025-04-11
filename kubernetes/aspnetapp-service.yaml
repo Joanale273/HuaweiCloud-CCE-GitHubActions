@@ -4,6 +4,7 @@ metadata:
   name: aspdotnet-elb
   namespace: default
   annotations:
+    kubernetes.io/elb.id: d2e62b8c-2dd7-4fc9-8877-647a529cd9d9
     kubernetes.io/elb.class: performance
     kubernetes.io/elb.eip.auto-create: "true"
 spec:
