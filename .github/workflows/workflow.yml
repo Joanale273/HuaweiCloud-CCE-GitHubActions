@@ -19,6 +19,7 @@ jobs:
       SWR_ENDPOINT: ${{ secrets.SWR_ENDPOINT }}
       SWR_ORGANIZATION_NAME: ${{ secrets.SWR_ORGANIZATION_NAME }}
       SWR_USER: ${{ secrets.SWR_USER }}
+      SWR_PW: ${{ secrets.SWR_PW }}
       IMAGE_NAME: aspnetapp
       DEPLOYMENT_NAME: aspnetapp
       DOCKER_WORKING_DIRECTORY: ./docker
@@ -62,7 +63,7 @@ jobs:
           kubectl create secret docker-registry swr-secret \
             --docker-server=${{ env.SWR_ENDPOINT }} \
             --docker-username=${{ secrets.SWR_USER }} \
-            --docker-password=${{ secrets.HC_ACCESS_KEY_SECRET }} \
+            --docker-password=${{ secrets.SWR_PW }} \
             --namespace=default
       
       
