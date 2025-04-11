@@ -15,6 +15,8 @@ spec:
         app: aspdotnet
         version: v1
     spec:
+      imagePullSecrets:
+        - name: swr-secret
       containers:
         - name: container-0
           image: 'swr.la-south-2.myhuaweicloud.com/tdp-hublean-repo/aspnetapp:IMAGE_LABEL'
