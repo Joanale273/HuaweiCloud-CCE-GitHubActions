@@ -6,9 +6,8 @@ metadata:
     app: aspdotnet
   namespace: default
   annotations:
-    kubernetes.io/elb.id: 8ef7afd8-9b1c-4e27-aa08-a4473d4ab192
     kubernetes.io/elb.class: performance
-    kubernetes.io/elb.eip.auto-create: "false"
+    kubernetes.io/elb.eip.auto-create: "true"
 spec:
   selector:
     app: aspdotnet
