@@ -56,4 +56,12 @@ jobs:
           sed -i'' -e 's/IMAGE_LABEL/${{ github.sha }}/g' "${{ env.KUBERNETES_WORKING_DIRECTORY }}"/*deployment.yaml
           kubectl apply -f "${{ env.KUBERNETES_WORKING_DIRECTORY }}"
       
+      - name: Create image pull secret for SWR
+        run: |
+          kubectl create secret docker-registry swr-secret \
+            --docker-server=${{ env.SWR_ENDPOINT }} \
+            --docker-username=${{ secrets.HC_ACCESS_KEY_ID }} \
+            --docker-password=${{ secrets.HC_ACCESS_KEY_SECRET }} \
+            --namespace=default
+      
       
