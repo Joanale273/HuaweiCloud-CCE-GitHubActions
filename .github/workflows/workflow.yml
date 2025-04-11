@@ -60,7 +60,7 @@ jobs:
         run: |
           kubectl create secret docker-registry swr-secret \
             --docker-server=${{ env.SWR_ENDPOINT }} \
-            --docker-username=${{ secrets.HC_ACCESS_KEY_ID }} \
+            --docker-username=${{ secrets.SWR_USER }} \
             --docker-password=${{ secrets.HC_ACCESS_KEY_SECRET }} \
             --namespace=default
       
