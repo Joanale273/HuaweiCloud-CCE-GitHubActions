@@ -64,6 +64,7 @@ jobs:
             --docker-server=${{ env.SWR_ENDPOINT }} \
             --docker-username=${{ secrets.SWR_USER }} \
             --docker-password=${{ secrets.SWR_PW }} \
-            --namespace=default
+            --namespace=default \
+            --dry-run=client -o yaml | kubectl apply -f -
       
       
